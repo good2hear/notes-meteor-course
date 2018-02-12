@@ -18,7 +18,7 @@ if (Meteor.isClient) {
       wrapper.find('button').simulate('click');
 
       // expect(spy.calls[0].arguments[0]).toEqual('notes.insert');
-      expect(spy).toHaveBeenCalled();
+      expect(spy).toHaveBeenCalledWith('notes.insert');
     });
 
   });
