@@ -4,7 +4,7 @@ import { Meteor } from 'meteor/meteor';
 import Enzyme, { mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-15';
 
-import NoteListHeader from './NoteListHeader';
+import { NoteListHeader } from './NoteListHeader';
 
 Enzyme.configure({ adapter: new Adapter() });
 
