@@ -1,5 +1,6 @@
 import React from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
+import { withTracker } from 'meteor/react-meteor-data';
 import { Session } from 'meteor/session';
 import { Meteor } from 'meteor/meteor';
 
@@ -42,7 +43,7 @@ Editor.propTypes = {
   selectedNoteId: React.PropTypes.string
 };
 
-export default createContainer(() => {
+export default withTracker(() => {
   const selectedNoteId = Session.get('selectedNoteId');
 
   return {
@@ -50,5 +51,5 @@ export default createContainer(() => {
     note: Notes.findOne(selectedNoteId),
     call: Meteor.call
   };
-}, Editor);
+})(Editor);
 
